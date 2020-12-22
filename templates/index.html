@@ -1,9 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Flask</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+{% extends "layout.html" %}
+
+{% block heading %}
+    First Page
+{% endblock %}
+
+{% block body %}
+        {% if new_year %}
+        <h1>happy new year</h1>
+        {% else %}
+        <h1>no</h1>
+        <a href="{{ url_for('more') }}">Click here</a>
+        {% endif %}
+{% endblock %}
